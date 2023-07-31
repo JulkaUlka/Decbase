@@ -72,7 +72,7 @@ function createNewsCards(cardInfo) {
     .map((el) => {
       return `
         <li class="services__item">
-          <p class="services__title">${el.title}</p>
+          <p class="services__newTitle">${el.title}</p>
           <p class="services__text text">${el.description}</p>
           <a href="${el.url}" class="services__link text" target="_blank" rel="noopener noreferrer">Read more</a>
         </li>

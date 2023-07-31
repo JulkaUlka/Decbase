@@ -1,0 +1,50 @@
+.services {
+  padding-bottom: 400px;
+  background: url(../images/decore2.svg) no-repeat bottom right;
+
+  &__list-filter {
+    @include centeredFlex(flex-start);
+    gap: 77px;
+    margin-top: 50px;
+  }
+  &__button-filter {
+    border-radius: 1.25rem;
+  }
+  &__list{
+    @include centeredFlex();
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 100px;
+  }
+  &__item {
+   padding: 30px;
+    width: 477px;
+    height: auto;
+    border-radius: 3.75rem 0rem;
+    background: $bgColor;
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.14);
+    @include transition(color, background-color);
+    &:hover,
+    &:focus {
+      background-color: $accentColor;
+      color: $bgColor;
+    }
+  }
+  &__title {
+    color: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+text-align: center;
+  }
+  &__text {
+    color: inherit;
+    line-height: 1.2rem;
+    margin-top: 5px;
+   }
+   &__link{
+    color: $buttonColor;
+   }
+}
+.active {
+  @include button-hover;
+}

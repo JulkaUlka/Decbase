@@ -1,0 +1,87 @@
+.footer {
+  background-color: $bgColorDark;
+  position: relative;
+  &__container {
+    @include centeredFlex(space-between, start);
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+
+    @include desktop {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding-top: 93px;
+      &::before {
+        content: url(../images/decore1.svg);
+        position: absolute;
+        top: -93px;
+        left: 0px;
+      }
+    }
+  }
+  &__text {
+    margin-top: 10px;
+  }
+  &__rights {
+    text-align: center;
+    padding: 18px 0;
+    border-top: 2px solid #c4c4c4;
+    &_link {
+      color: $buttonColor;
+    }
+  }
+
+  &__nav {
+    @include centeredFlex(space-around, start);
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 35px;
+      width: 100%/3;
+    }
+  }
+  &__nav-item {
+    &_first {
+      padding-bottom: 6px;
+    }
+  }
+  &__nav-list {
+    margin-bottom: 69px;
+    @include centeredFlex(center, start);
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__nav-link {
+    color: inherit;
+
+    &_accent {
+      font-size: 1.5rem;
+      font-weight: 600;
+      line-height: 2.5rem;
+      color: $titleColor;
+    }
+  }
+  &__media-block {
+    @include centeredFlex();
+    flex-direction: column;
+  }
+  &__media-list {
+    @include centeredFlex();
+    gap: 10px;
+    padding-top: 6px;
+  }
+  &__media-link {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    @include centeredFlex();
+    background-color: #d5d5d5;
+    @include transition(background-color, stroke);
+    &:hover,
+    &:focus {
+      background-color: $buttonColor;
+    }
+  }
+}

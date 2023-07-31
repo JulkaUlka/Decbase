@@ -1,2 +1,22 @@
-@import './common';
-@import './example';
+//utils styles
+@import './utils/mixin';
+@import './utils/variables';
+
+//base styles
+@import './base/base';
+@import './base/reset';
+@import './base/container';
+
+//components styles
+@import './components/loader';
+@import './components/header';
+@import './components/hero';
+@import './components/services';
+@import './components/about';
+@import './components/works';
+@import './components/testimonials';
+@import './components/news';
+@import './components/gallery';
+@import './components/subscribtion';
+@import './components/modal';
+@import './components/footer';

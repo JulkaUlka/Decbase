@@ -1,0 +1,32 @@
+.gallery {
+  background-color: $bgColorDark;
+  &__container {
+    padding-bottom: 120px;
+  }
+  &__list {
+    @include centeredFlex(space-between);
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &__card {
+    cursor: pointer;
+    border: 2px solid $borderColor;
+    border-radius: 8.75rem 0rem;
+    width: calc((100% - 100px) / 3);
+    height: 300px;
+    overflow: hidden;
+  }
+  &__img {
+    height: 300px;
+    width: 100%;
+    @include transition(transform);
+    &:hover,
+    &:focus {
+      transform: scale(1.2);
+    }
+  }
+}

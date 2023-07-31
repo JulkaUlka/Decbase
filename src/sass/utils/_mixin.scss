@@ -1,0 +1,29 @@
+@mixin transition($params...) {
+  transition-property: $params;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767.8px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin centeredFlex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin button-hover{
+  color: $buttonColor;
+  background-color: $bgColor;
+  border: 5px solid $buttonColor;
+}

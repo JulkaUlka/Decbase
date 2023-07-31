@@ -1,0 +1,70 @@
+body {
+  background-color: $bgColor;
+  font-family: $main_font;
+  color: $mainColor;
+}
+
+.section {
+  padding-top: 70px;
+  @include desktop {
+    padding-top: 94px;
+  }
+}
+
+.subtitle {
+  font-family: $title_font;
+  color: $subtitleColor;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  text-transform: uppercase;
+
+  @include desktop {
+    font-size: 1.25rem;
+  }
+}
+.title {
+  font-family: $title_font;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 3.5625rem;
+  color: $titleColor;
+  text-transform: capitalize;
+
+  @include desktop {
+    font-size: 3rem;
+  }
+}
+
+.text {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.875rem;
+}
+
+.button {
+  padding: 0.6rem 1.19rem;
+  border-radius: 1.25rem 0rem;
+  background-color: $buttonColor;
+  color: $bgColor;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 5px solid transparent;
+  @include transition(color, background-color, border);
+  &:hover,
+  &:focus {
+    @include button-hover;
+  }
+}
+
+.img-wrap {
+  border-radius: 8.75rem 0rem;
+  border: 2px solid $borderColor;
+  background-color: $bgColor;
+}
+
+.img {
+  border-radius: 8.75rem 0rem;
+}

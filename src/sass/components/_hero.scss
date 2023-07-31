@@ -1,0 +1,29 @@
+.hero {
+  &__container {
+    @include centeredFlex(space-between);
+    @include desktop{
+      background: url(../images/decore1.svg) no-repeat bottom left;
+      padding-bottom: 218px;
+    }
+  }
+  &__block {
+    @include centeredFlex(center, start);
+    gap: 20px;
+    flex-direction: column;
+    max-width: 43%;
+  }
+  &__title {
+    color: $titleColor;
+    font-family: $title_font;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 4.875rem;
+  }
+  &__button {
+    margin-top: 40px;
+  }
+  &__img {
+    transform: translate(-30px, -30px);
+  }
+}

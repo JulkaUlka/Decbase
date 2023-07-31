@@ -1,0 +1,47 @@
+.loader {
+  @include centeredFlex();
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background: $bgColorDark;
+}
+svg {
+  font-family: $main_font;
+  font-size: 10rem;
+  font-weight: 700;
+  width: 100%;
+}
+svg text {
+  animation: stroke 2s infinite alternate;
+  stroke-width: 2;
+  stroke: #b0855b;
+  font-size: 100px;
+}
+@keyframes stroke {
+  0% {
+    fill: rgba(55, 128, 107, 0);
+    stroke: rgba(176, 133, 91, 1);
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 50%;
+    stroke-width: 2;
+  }
+  70% {
+    fill: rgba(55, 128, 107, 0);
+    stroke: rgba(176, 133, 91, 1);
+  }
+  80% {
+    fill: rgba(55, 128, 107, 0);
+    stroke: rgba(176, 133, 91, 1);
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgba(55, 128, 107, 1);
+    stroke: rgba(176, 133, 91, 0);
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 50% 0;
+    stroke-width: 0;
+  }
+}

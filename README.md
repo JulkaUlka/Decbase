@@ -6,9 +6,9 @@ This is a landing page of interior design studio Decbase.
 
 - HTML;
 - SASS(SCSS);
--JavaScript;
--BEM methodology;
--Parcel;
+- JavaScript;
+- BEM methodology;
+- Parcel;
 
 ## API:
 

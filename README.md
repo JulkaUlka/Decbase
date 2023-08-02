@@ -12,7 +12,7 @@ This is a landing page of interior design studio Decbase.
 
 ## API:
 
-+ **[NewsAPI](https://newsapi.org/) - Used to create Services section whitch shows us latest news in the world about design. The buttons act as filters to switch to news with the required topic**
++ **[SWAPI](https://swapi.dev/) - Used to create Services section which shows us information about Star Wars World. The buttons act as filters to switch to the topic with the required name**
 + **[Pixabay](https://pixabay.com/) - Used to create the Gallery section to imitate interior design works of the Decbase**
 
 ## Libraries:

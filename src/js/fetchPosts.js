@@ -1,19 +1,14 @@
 import { fetchAPI } from "./fetchAPI";
 
-const BASE_URL = "https://newsapi.org/v2/everything";
-
-const params = new URLSearchParams({
-  apiKey: "b37cebb217f0492eb9ace831761d3337",
-  q: "",
-  language: "en",
-});
+const BASE_URL = "https://swapi.dev/api/";
 
 const postList = document.querySelector(".services__list");
 const filters = document.querySelector(".services__list-filter");
 const buttons = filters.querySelectorAll(".services__button-filter");
 
-const queryArr = ["interior design", "architecture", "furniture"];
+const endpointArr = ["planets", "people", "species"];
 let allPostsArr = [];
+let endpoint;
 
 filters.addEventListener("click", setActiveButton);
 filters.addEventListener("click", fetchPosts);
@@ -33,25 +28,22 @@ function fetchPosts() {
   const targetButton = filters.querySelector(".active");
   if (!targetButton) return;
 
-  const q = targetButton.value;
-  if (!q) {
+  endpoint = targetButton.value;
+  if (!endpoint) {
     fetchAllPosts();
   }
-  params.set("q", q);
 
-  fetchAPI(BASE_URL, params)
-    .then((data) => createNewsCards(data.articles))
+  fetchAPI(BASE_URL + endpoint)
+    .then((data) => createNewsCards(data.results))
     .catch((error) => {
       console.error("Error loading posts:", error);
     });
 }
 
 function fetchAllPosts() {
-  const fetchPromises = queryArr.map((q) => {
-    params.set("q", q);
-
-    return fetchAPI(BASE_URL, params)
-      .then((data) => allPostsArr.push(data.articles[0]))
+  const fetchPromises = endpointArr.map((i) => {
+    return fetchAPI(BASE_URL + i)
+      .then((data) => allPostsArr.push(data.results[0]))
       .catch((error) => {
         console.error("Error loading posts:", error);
       });
@@ -70,16 +62,22 @@ function createNewsCards(cardInfo) {
 
   const markup = postArr
     .map((el) => {
+      const propertiesToShow = Object.entries(el).slice(0, 4);
+
+      const propertiesString = propertiesToShow.map(
+        ([key, value]) => `${key}: ${value}`
+      );
+
       return `
         <li class="services__item">
-          <p class="services__newTitle">${el.title}</p>
-          <p class="services__text text">${el.description}</p>
-          <a href="${el.url}" class="services__link text" target="_blank" rel="noopener noreferrer">Read more</a>
+          <p class="services__newTitle">${propertiesString[0]}</p>
+          <p class="services__text text">${propertiesString[1]}</p>
+          <p class="services__text text">${propertiesString[2]}</p>
+          <p class="services__text text">${propertiesString[3]}</p>
         </li>
       `;
     })
     .join("");
-
   postList.innerHTML = markup;
   allPostsArr = [];
 }
